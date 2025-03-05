@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Suggester</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+
+</head>
+<body>
+    <div class="navbar"><b>Grace & Bliss:</b> Gracing Blissful Moments!</div>
+    <div class="container">
+        <div class="box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRksn4KGawFwckDKhYuyFwGiENBZ06IVfadcw&s" alt="Recipe Image">
+            <div>
+                <p><b>Share your preferences to discover the perfect gift suggestions.</b></p>
+                <form action="/predict" method="post">
+                    <input type="text" name="Age" placeholder="Enter Age" required>
+                    <input type="text" name="Gender" placeholder="Enter Gender" required>
+                    <input type="text" name="Occasion" placeholder="Enter Occasion" required>
+                    <input type="text" name="Preferences" placeholder="Enter Preferences" required>
+                    <input type="text" name="Hobbies" placeholder="Enter Hobbies" required>
+                    <input type="text" name="Job" placeholder="Enter Job" required>
+                    <input type="text" name="Past Gifts" placeholder="Enter Past Gifts" required>
+                    <input type="text" name="Price Range" placeholder="Enter Price Range" required>
+                    <button type="submit">Get Gift Choices</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

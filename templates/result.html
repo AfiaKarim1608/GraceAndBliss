@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Suggester</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+    <div class="navbar">Grace & Bliss: Gracing Blissful Moments!</div>
+    <h2>Suggested Gifts for "{{ user_input }}"</h2>
+    
+    {% if recommendations %}
+        <ul>
+            {% for gift in recommendations %}
+                <li>
+                    <strong>Gift Idea:</strong> {{ gift["Past Gifts"] }}<br>
+                    <strong>Based on Preferences:</strong> {{ gift["Preferences"] }}<br>
+                    <strong>Hobbies:</strong> {{ gift["Hobbies"] }}<br>
+                    <strong>Price Range:</strong> {{ gift["Price Range"] }}
+                </li>
+                <hr>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No gift suggestions found.</p>
+    {% endif %}
+
+    <a href="/">Go Back</a>
+</body>
+</html>
